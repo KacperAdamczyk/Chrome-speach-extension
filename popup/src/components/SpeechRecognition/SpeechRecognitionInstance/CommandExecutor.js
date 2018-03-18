@@ -1,9 +1,8 @@
 /* @flow */
 /* global chrome */
-import {store} from '../../../../store/store';
-import type {ExecutionQueueItem} from "../../../../models/executionQueueItem";
-import {updateExecutionQueueItem} from "../../../../store/actions";
-import type {Action} from "../../../../models/action";
+import {store} from '../../../store/store';
+import type {ExecutionQueueItem} from "../../../models/executionQueueItem";
+import {updateExecutionQueueItem} from "../../../store/actions";
 
 class CommandExecutor {
     constructor() {
@@ -26,21 +25,14 @@ class CommandExecutor {
 
     executeCommands(queue: ExecutionQueueItem[]) {
         queue.forEach(e => {
-            this.executeTest(e);
+            this.executeCode(e);
             store.dispatch(updateExecutionQueueItem({...e, executed: true}));
         })
     }
-// TODO move it to content script file
-    executeTest(e: ExecutionQueueItem) {
-        const command = e.command;
-        command.actions.forEach((a: Action) => {
-            if (a.type === 'CLICK') {
-                chrome.tabs.executeScript({
-                    code: `document.querySelector('${a.selector}').click()`
-                })
-            }
-        })
 
+    executeCode(e: ExecutionQueueItem) {
+        const code = e.value ? e.command.action.codeJS.replace(/@value/g, e.value) : e.command.action.codeJS;
+        chrome.tabs && chrome.tabs.executeScript({code});
     }
 }
 

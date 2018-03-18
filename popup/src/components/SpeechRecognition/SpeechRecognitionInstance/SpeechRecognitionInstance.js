@@ -7,7 +7,7 @@ import {Settings} from "../../../models/settings";
 import {connect} from "react-redux";
 import HistoryLogger from "./HistoryLogger/HistoryLogger";
 import CommandRecognition from "./CommandRecognition";
-import CommandExecutor from "./HistoryLogger/CommandExecutor";
+import CommandExecutor from "./CommandExecutor";
 
 type Props = {
     settings: Settings,

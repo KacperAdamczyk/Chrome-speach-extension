@@ -36,12 +36,19 @@ export function historyReducer(state: History[] = [], action: HistoryAction) {
 const developmentCommands: Command[] = [
     {
         voiceCommand: 'play',
-        actions: [
-            {
-                type: "CLICK",
-                selector: '.ytp-play-button'
-            }
-        ]
+        action: {
+            codeJS: 'document.querySelector(".ytp-play-button").click();'
+        }
+    },
+    {
+        voiceCommand: 'search *',
+        action: {
+            codeJS: `
+            const search = document.querySelector("#search input");
+            search.value = "@value";
+            document.querySelector("#search-icon-legacy").click();
+            `
+        }
     }
 ];
 
