@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "Voice control",
+  "description": "This extension allows to control web page using voice commands.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}
