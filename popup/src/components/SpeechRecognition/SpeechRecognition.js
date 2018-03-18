@@ -1,3 +1,4 @@
+/* @flow */
 import React, {Fragment} from 'react';
 
 import SpeechRecognitionOptions from "./SpeechRecognitionOptions/SpeechRecognitionOptions";
