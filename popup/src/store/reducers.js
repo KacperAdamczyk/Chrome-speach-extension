@@ -44,8 +44,7 @@ const developmentCommands: Command[] = [
         voiceCommand: 'search *',
         action: {
             codeJS: `
-            const search = document.querySelector("#search input");
-            search.value = "@value";
+            document.querySelector("#search input").value = "@value";
             document.querySelector("#search-icon-legacy").click();
             `
         }
