@@ -1,13 +1,14 @@
 /* @flow */
 import React, {Component} from 'react';
 
-import {State} from "../../../store/store";
-import {addHistory} from "../../../store/actions";
-import {Settings} from "../../../models/settings";
-import {connect} from "react-redux";
-import HistoryLogger from "./HistoryLogger/HistoryLogger";
-import CommandRecognition from "./CommandRecognition";
-import CommandExecutor from "./CommandExecutor";
+import type {State} from '../../../store/store';
+import {addHistory} from '../../../store/actions';
+import type {Settings} from '../../../models/settings';
+import type {History} from '../../../models/history';
+import {connect} from 'react-redux';
+import HistoryLogger from './HistoryLogger/HistoryLogger';
+import CommandRecognition from './CommandRecognition';
+import CommandExecutor from './CommandExecutor';
 
 type Props = {
     settings: Settings,
@@ -17,6 +18,8 @@ type Props = {
 class SpeechRecognitionInstanceBase extends Component<Props> {
     BrowserSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     SpeechGrammarList = window.SpeechGrammarList || window.webkitSpeechGrammarList;
+    speech: any;
+    commandExecutor: CommandExecutor;
 
     componentDidMount() {
         // const grammar = '#JSGF V1.0; grammar phrase; public <phrase> = ' + phrase + ';';
@@ -30,11 +33,10 @@ class SpeechRecognitionInstanceBase extends Component<Props> {
         // this.speech.grammars = speechRecognitionList;
 
         this.speech.onresult = response => {
-            console.log(response);
             const command = response.results[0][0].transcript;
 
             const recognised = CommandRecognition.recogniseCommand(command);
-            this.props.addHistory({command, recognised});
+            this.props.addHistory(({command, recognised}: History));
         };
         this.speech.onend = () => this.speech.start();
 
@@ -65,7 +67,7 @@ function mapStateToProps(state: State) {
 function mapDispatchToProps(dispatch) {
     return {
         addHistory: (history: History) => dispatch(addHistory(history))
-    }
+    };
 }
 
 const SpeechRecognitionInstance = connect(mapStateToProps, mapDispatchToProps)(SpeechRecognitionInstanceBase);

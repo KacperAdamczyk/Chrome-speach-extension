@@ -1,13 +1,13 @@
 /* @flow */
 import React, {Component} from 'react';
-import {Provider} from "react-redux";
+import {Provider} from 'react-redux';
 
 import './App.css';
-import MediaProvider from "./components/AccessProvider/AccessProvider";
-import {store} from "./store/store";
-import SpeechRecognition from "./components/SpeechRecognition/SpeechRecognition";
+import MediaProvider from './components/AccessProvider/AccessProvider';
+import {store} from './store/store';
+import SpeechRecognition from './components/SpeechRecognition/SpeechRecognition';
 
-class App extends Component {
+class App extends Component<{}> {
     render() {
         return (
             <div className='app-container'>

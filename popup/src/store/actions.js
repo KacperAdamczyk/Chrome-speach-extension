@@ -1,12 +1,12 @@
 /* @flow */
 import {Settings} from '../models/settings';
-import {History} from '../models/history';
-import type {Command} from "../models/command";
-import type {ExecutionQueueItem} from "../models/executionQueueItem";
+import type {History} from '../models/history';
+import type {Command} from '../models/command';
+import type {ExecutionQueueItem} from '../models/executionQueueItem';
 
-export const SET_SETTINGS = 'SET_SETTINGS';
+export const SET_SETTINGS: 'SET_SETTINGS' = 'SET_SETTINGS';
 export type SettingAction = {
-    type: SET_SETTINGS,
+    type: typeof SET_SETTINGS,
     payload: Settings
 };
 
@@ -17,9 +17,9 @@ export function setSettings(settings: Settings): SettingAction {
     };
 }
 
-export const ADD_TO_HISTORY = 'ADD_TO_HISTORY';
+export const ADD_TO_HISTORY: 'ADD_TO_HISTORY' = 'ADD_TO_HISTORY';
 export type HistoryAction = {
-    type: ADD_TO_HISTORY,
+    type: typeof ADD_TO_HISTORY,
     payload: History
 };
 
@@ -30,9 +30,9 @@ export function addHistory(history: History): HistoryAction {
     };
 }
 
-export const SET_COMMANDS = 'SET_COMMANDS';
+export const SET_COMMANDS: 'SET_COMMANDS' = 'SET_COMMANDS';
 export type CommandsAction = {
-    type: SET_COMMANDS,
+    type: typeof SET_COMMANDS,
     payload: Command[]
 };
 
@@ -43,10 +43,10 @@ export function setCommands(commands: Command[]) {
     };
 }
 
-export const ADD_TO_EXECUTION_QUEUE = 'ADD_TO_EXECUTION_QUEUE';
-export const UPDATE_EXECUTION_QUEUE_ITEM = 'UPDATE_EXECUTION_QUEUE_ITEM';
+export const ADD_TO_EXECUTION_QUEUE: 'ADD_TO_EXECUTION_QUEUE' = 'ADD_TO_EXECUTION_QUEUE';
+export const UPDATE_EXECUTION_QUEUE_ITEM: 'UPDATE_EXECUTION_QUEUE_ITEM' = 'UPDATE_EXECUTION_QUEUE_ITEM';
 export type ExecutionQueueAction = {
-    type: ADD_TO_EXECUTION_QUEUE | UPDATE_EXECUTION_QUEUE_ITEM,
+    type: typeof ADD_TO_EXECUTION_QUEUE | typeof UPDATE_EXECUTION_QUEUE_ITEM,
     payload: ExecutionQueueItem
 };
 

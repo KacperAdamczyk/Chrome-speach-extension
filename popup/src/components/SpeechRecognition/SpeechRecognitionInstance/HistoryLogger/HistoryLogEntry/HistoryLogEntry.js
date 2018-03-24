@@ -1,7 +1,7 @@
 /* @flow */
 import React from 'react';
 
-import {History} from '../../../../../models/history';
+import type {History} from '../../../../../models/history';
 
 import './HistoryLogEntry.css';
 

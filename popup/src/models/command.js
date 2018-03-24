@@ -1,4 +1,5 @@
-import type {Action} from "./action";
+/* @flow */
+import type {Action} from './action';
 
 export type Command = {
     voiceCommand: string,

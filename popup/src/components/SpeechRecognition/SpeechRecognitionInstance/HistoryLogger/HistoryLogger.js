@@ -1,9 +1,9 @@
 /* @flow */
 import React from 'react';
-import {connect} from "react-redux";
+import {connect} from 'react-redux';
 
-import {History} from '../../../../models/history';
-import HistoryLogEntry from "./HistoryLogEntry/HistoryLogEntry";
+import type {History} from '../../../../models/history';
+import HistoryLogEntry from './HistoryLogEntry/HistoryLogEntry';
 
 import './HistoryLogger.css';
 

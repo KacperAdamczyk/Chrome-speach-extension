@@ -1,12 +1,12 @@
 /* @flow */
 import {combineReducers, createStore} from 'redux';
-import {devToolsEnhancer} from "redux-devtools-extension";
+import {devToolsEnhancer} from 'redux-devtools-extension';
 
-import {Settings} from "../models/settings";
-import {History} from "../models/history";
-import {Command} from "../models/command";
-import {commandsReducer, executionQueueReducer, historyReducer, settingsReducer} from "./reducers";
-import type {ExecutionQueueItem} from "../models/executionQueueItem";
+import type {Settings} from '../models/settings';
+import type {History} from '../models/history';
+import type {Command} from '../models/command';
+import {commandsReducer, executionQueueReducer, historyReducer, settingsReducer} from './reducers';
+import type {ExecutionQueueItem} from '../models/executionQueueItem';
 
 export type State = {
     settings: Settings,

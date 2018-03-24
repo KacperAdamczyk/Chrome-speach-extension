@@ -17,7 +17,7 @@ class AccessProvider extends Component<Props, State> {
     };
 
     componentDidMount() {
-        navigator.mediaDevices.getUserMedia({audio: true, video: false})
+        window.navigator.mediaDevices.getUserMedia({audio: true, video: false})
             .then(
                 () => this.setState({haveAccess: true}),
                 () => this.setState({haveAccess: false})
@@ -29,7 +29,7 @@ class AccessProvider extends Component<Props, State> {
             this.state.haveAccess ?
                 this.props.children :
                 <div className='no-access'>No access to media</div>
-        )
+        );
     }
 }
 
