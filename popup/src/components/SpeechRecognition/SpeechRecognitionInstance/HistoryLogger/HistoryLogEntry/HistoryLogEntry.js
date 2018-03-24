@@ -12,9 +12,8 @@ type Props = {
 function HistoryLogEntry(props: Props) {
     return (
         <div className={`log-entry ${props.entry.recognised ? 'log-entry--recognised' : 'log-entry--unrecognised'}`}>
-            {console.log(props.entry)}
-            <div className="log-entry__command">{props.entry.history.command}</div>
-            <div className="log-entry__time">{props.entry.time}</div>
+            <div className="log-entry__command">{props.entry.command}</div>
+            <div className="log-entry__time">{props.time}</div>
         </div>
     );
 }

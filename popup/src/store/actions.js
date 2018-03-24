@@ -25,11 +25,11 @@ export type HistoryAction = {
 
 export function addHistory(history: History): HistoryAction {
     const d = new Date();
-    const time = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+    const time = `${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
     return {
         type: ADD_TO_HISTORY,
         payload: {
-            history,
+          ...history,
             time
         }
     };

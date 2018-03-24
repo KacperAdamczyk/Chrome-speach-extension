@@ -10,11 +10,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/SpeechRecognitionInstance.js" afterPath="$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/SpeechRecognitionInstance.js" />
+      <change beforePath="$PROJECT_DIR$/build-windows.bat" afterPath="$PROJECT_DIR$/build-windows.bat" />
+      <change beforePath="$PROJECT_DIR$/popup/.gitignore" afterPath="$PROJECT_DIR$/popup/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/HistoryLogger/HistoryLogEntry/HistoryLogEntry.js" afterPath="$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/HistoryLogger/HistoryLogEntry/HistoryLogEntry.js" />
+      <change beforePath="$PROJECT_DIR$/popup/src/store/actions.js" afterPath="$PROJECT_DIR$/popup/src/store/actions.js" />
+      <change beforePath="$PROJECT_DIR$/popup/yarn.lock" afterPath="$PROJECT_DIR$/popup/yarn.lock" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
+    <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,109 +29,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SpeechRecognitionInstance.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/SpeechRecognitionInstance.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="66" column="40" lean-forward="true" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/popup/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".eslintrc.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/popup/.eslintrc.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="897">
-              <caret line="41" column="1" lean-forward="false" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="actions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/popup/src/store/actions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+            <state relative-caret-position="-126">
+              <caret line="44" column="12" lean-forward="false" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1521925370919" expanded="true" signature="1509:1572" ph="..." />
-                <marker date="1521925370919" expanded="true" signature="1650:1717" ph="{&quot;type&quot;: ADD_TO_EXECUTION_QUEUE...}" />
-                <marker date="1521925370919" expanded="true" signature="1802:1874" ph="{&quot;type&quot;: UPDATE_EXECUTION_QUEUE_ITEM...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommandRecognition.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/CommandRecognition.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#12#60#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HistoryLogger.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/HistoryLogger/HistoryLogger.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HistoryLogEntry.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HistoryLogEntry.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/HistoryLogger/HistoryLogEntry/HistoryLogEntry.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HistoryLogger.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/HistoryLogger/HistoryLogger.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/popup/src/App.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="54" column="1" lean-forward="false" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/popup/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="20" column="14" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+            <state relative-caret-position="345">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -162,7 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/popup/.gitignore" />
         <option value="$PROJECT_DIR$/popup/public/index.html" />
         <option value="$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/MicStatus/MicStatus.css" />
         <option value="$PROJECT_DIR$/popup/src/components/AccessProvider/AccessProvider.js" />
@@ -171,12 +89,13 @@
         <option value="$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/HistoryLogger/HistoryLogger.js" />
         <option value="$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/HistoryLogger/HistoryLogEntry/HistoryLogEntry.css" />
         <option value="$PROJECT_DIR$/popup/src/models/history.js" />
-        <option value="$PROJECT_DIR$/popup/src/store/actions.js" />
-        <option value="$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/HistoryLogger/HistoryLogEntry/HistoryLogEntry.js" />
         <option value="$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/HistoryLogger/HistoryLogger.css" />
         <option value="$PROJECT_DIR$/popup/package.json" />
         <option value="$PROJECT_DIR$/popup/src/App.css" />
         <option value="$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/SpeechRecognitionInstance.js" />
+        <option value="$PROJECT_DIR$/popup/.gitignore" />
+        <option value="$PROJECT_DIR$/popup/src/store/actions.js" />
+        <option value="$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/HistoryLogger/HistoryLogEntry/HistoryLogEntry.js" />
       </list>
     </option>
   </component>
@@ -339,7 +258,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="C:\Users\Kacper\AppData\Roaming\npm\node_modules\eslint" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.standard" value="C:\Users\Kacper\AppData\Roaming\npm\node_modules\eslint" />
@@ -406,22 +325,28 @@
       <option name="project" value="LOCAL" />
       <updated>1521921100808</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="merged master">
+      <created>1521925681009</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1521925681009</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30023000" />
+    <option name="totallyTimeSpent" value="31008000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32928178" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32928178" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -467,7 +392,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added styles" />
     <MESSAGE value="added styles&#10;added time" />
-    <option name="LAST_COMMIT_MESSAGE" value="added styles&#10;added time" />
+    <MESSAGE value="merged master" />
+    <option name="LAST_COMMIT_MESSAGE" value="merged master" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -674,14 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/popup/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="14" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionOptions/SpeechRecognitionOptions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -718,6 +636,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -739,43 +660,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/popup/src/store/actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1521925370919" expanded="true" signature="1509:1572" ph="..." />
-            <marker date="1521925370919" expanded="true" signature="1650:1717" ph="{&quot;type&quot;: ADD_TO_EXECUTION_QUEUE...}" />
-            <marker date="1521925370919" expanded="true" signature="1802:1874" ph="{&quot;type&quot;: UPDATE_EXECUTION_QUEUE_ITEM...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/CommandRecognition.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#12#60#0" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#12#60#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/HistoryLogger/HistoryLogger.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/HistoryLogger/HistoryLogEntry/HistoryLogEntry.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,14 +675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="897">
           <caret line="41" column="1" lean-forward="false" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/popup/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -805,16 +689,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/popup/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
+        <state relative-caret-position="380">
           <caret line="54" column="1" lean-forward="false" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/popup/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/popup/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/SpeechRecognitionInstance.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
+        <state relative-caret-position="1311">
           <caret line="66" column="40" lean-forward="true" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/HistoryLogger/HistoryLogger.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/popup/src/store/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-126">
+          <caret line="44" column="12" lean-forward="false" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/popup/src/components/SpeechRecognition/SpeechRecognitionInstance/HistoryLogger/HistoryLogEntry/HistoryLogEntry.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>

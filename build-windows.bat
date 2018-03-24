@@ -1,5 +1,5 @@
 @echo preparing build folder
-rm -r build
+rmdir /S /Q build
 mkdir build
 
 @echo building popup
