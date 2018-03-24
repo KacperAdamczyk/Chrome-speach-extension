@@ -20,9 +20,9 @@ class SpeechRecognitionOptionsBase extends Component<Props> {
 
     render() {
         return (
-            <div>
-                LANG:
-                <input value={this.props.settings.lang} onChange={this.handleLangInputChange}/>
+            <div className="options">
+                <label className="options__label" for="lang">Language: </label>
+                <input className="options__input" name="lang" value={this.props.settings.lang} onChange={this.handleLangInputChange}/>
             </div>
         );
     }

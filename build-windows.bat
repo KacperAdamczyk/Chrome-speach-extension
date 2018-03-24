@@ -1,5 +1,5 @@
 @echo preparing build folder
-rm -r build
+rmdir /S /Q build
 mkdir build
 
 @echo building popup
@@ -11,7 +11,7 @@ cd ..
 move popup\build build\popup
 move build\popup\index.html build\popup.html
 
-copy assets\* build
+xcopy /S assets\* build
 
 
 @echo done!
