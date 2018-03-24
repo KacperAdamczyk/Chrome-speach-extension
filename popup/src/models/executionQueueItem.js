@@ -1,4 +1,5 @@
-import type {Command} from "./command";
+/* @flow */
+import type {Command} from './command';
 
 export type ExecutionQueueItem = {
     id: number,

@@ -1,10 +1,10 @@
 /* @flow */
 import React, {Component} from 'react';
-import {connect} from "react-redux";
+import {connect} from 'react-redux';
 
-import type {State} from "../../../store/store";
-import type {Settings} from "../../../models/settings";
-import {setSettings} from "../../../store/actions";
+import type {State} from '../../../store/store';
+import type {Settings} from '../../../models/settings';
+import {setSettings} from '../../../store/actions';
 
 import './SpeechRecognitionOptions.css';
 
@@ -15,7 +15,7 @@ type Props = {
 
 class SpeechRecognitionOptionsBase extends Component<Props> {
     handleLangInputChange = (e) => {
-        this.props.setSettings({lang: e.target.value})
+        this.props.setSettings({lang: e.target.value});
     };
 
     render() {
@@ -24,7 +24,7 @@ class SpeechRecognitionOptionsBase extends Component<Props> {
                 <label className="options__label" for="lang">Language: </label>
                 <input className="options__input" name="lang" value={this.props.settings.lang} onChange={this.handleLangInputChange}/>
             </div>
-        )
+        );
     }
 }
 

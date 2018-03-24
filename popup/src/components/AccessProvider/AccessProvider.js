@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 
 import './AccessProvider.css';
 
+declare var chrome: any;
+
 type Props = {
     children: any
 }
@@ -17,7 +19,7 @@ class AccessProvider extends Component<Props, State> {
     };
 
     componentDidMount() {
-        navigator.mediaDevices.getUserMedia({audio: true, video: false})
+        window.navigator.mediaDevices.getUserMedia({audio: true, video: false})
             .then(
                 () => this.setState({haveAccess: true}),
                 () => this.setState({haveAccess: false})
@@ -28,8 +30,11 @@ class AccessProvider extends Component<Props, State> {
         return (
             this.state.haveAccess ?
                 this.props.children :
-                <div className='no-access'>No access to media</div>
-        )
+                <div className='no-access'>
+                    No access to media
+                    <a href='access-page/access-page.html' target="_blank">Provide access</a>
+                </div>
+        );
     }
 }
 
