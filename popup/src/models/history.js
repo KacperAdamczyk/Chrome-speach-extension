@@ -1,3 +1,5 @@
+/* @flow */
 export type History = {
-    command: string
+    command: string,
+    recognised: boolean
 }

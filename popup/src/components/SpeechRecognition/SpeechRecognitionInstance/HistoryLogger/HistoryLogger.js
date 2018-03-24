@@ -1,8 +1,9 @@
+/* @flow */
 import React from 'react';
-import {connect} from "react-redux";
+import {connect} from 'react-redux';
 
-import {History} from '../../../../models/history';
-import HistoryLogEntry from "./HistoryLogEntry/HistoryLogEntry";
+import type {History} from '../../../../models/history';
+import HistoryLogEntry from './HistoryLogEntry/HistoryLogEntry';
 
 import './HistoryLogger.css';
 
@@ -13,7 +14,7 @@ type Props = {
 let HistoryLogger = (props: Props) => {
     return (
         <div className='history-logger'>
-            {props.history.map(entry => <HistoryLogEntry entry={entry}/>)}
+            {props.history.map((entry, i) => <HistoryLogEntry key={i} entry={entry}/>)}
         </div>
     );
 };
