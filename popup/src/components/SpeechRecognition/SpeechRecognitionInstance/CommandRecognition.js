@@ -1,6 +1,6 @@
 /* @flow */
-import {store} from '../../../store/store';
 import type {State} from '../../../store/store';
+import {store} from '../../../store/store';
 import type {Command} from '../../../models/command';
 import {addToExecutionQueue} from '../../../store/actions';
 import type {ExecutionQueueItem} from '../../../models/executionQueueItem';

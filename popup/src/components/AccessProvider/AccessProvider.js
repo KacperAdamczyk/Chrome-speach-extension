@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 
 import './AccessProvider.css';
 
+declare var chrome: any;
+
 type Props = {
     children: any
 }
@@ -28,7 +30,10 @@ class AccessProvider extends Component<Props, State> {
         return (
             this.state.haveAccess ?
                 this.props.children :
-                <div className='no-access'>No access to media</div>
+                <div className='no-access'>
+                    No access to media
+                    <a href='/access-page.html' target="_blank">Provide access</a>
+                </div>
         );
     }
 }
