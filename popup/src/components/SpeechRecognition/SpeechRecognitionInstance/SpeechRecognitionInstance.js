@@ -33,7 +33,6 @@ class SpeechRecognitionInstanceBase extends Component<Props> {
         // this.speech.grammars = speechRecognitionList;
 
         this.speech.onresult = response => {
-            console.log(response);
             const command = response.results[0][0].transcript;
 
             const recognised = CommandRecognition.recogniseCommand(command);
