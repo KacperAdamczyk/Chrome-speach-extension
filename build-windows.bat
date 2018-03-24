@@ -11,7 +11,7 @@ cd ..
 move popup\build build\popup
 move build\popup\index.html build\popup.html
 
-copy assets\* build
+xcopy /S assets\* build
 
 
 @echo done!
