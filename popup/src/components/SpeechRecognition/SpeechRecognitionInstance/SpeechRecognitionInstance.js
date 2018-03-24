@@ -34,9 +34,8 @@ class SpeechRecognitionInstanceBase extends Component<Props> {
             const command = response.results[0][0].transcript;
 
             const recognised = CommandRecognition.recogniseCommand(command);
-            let d = new Date();
-            let time = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
-            this.props.addHistory({command, recognised, time});
+
+            this.props.addHistory({command, recognised});
         };
         this.speech.onend = () => this.speech.start();
 

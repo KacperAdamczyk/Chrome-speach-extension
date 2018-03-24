@@ -1,3 +1,7 @@
+:root {
+    --even-bg-color: #e4e4e4;
+}
+
 .log {
     max-height: 200px;
     overflow: auto;
@@ -6,7 +10,7 @@
 }
 
 .log-entry {
-    font-size: 18px;
+    font-size: 1.1em;
     padding: 5px 10px;
     box-sizing: border-box;
     display: flex;
@@ -14,12 +18,10 @@
 }
 
 .log-entry:nth-child(2n) {
-    background: #e4e4e4;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
+    background: var(--even-bg-color);
     border-radius: 10px;
 }
 
 h2 {
-    color: #2b2b2b;
+    color: var(--default-font-color);
 }
