@@ -6,6 +6,8 @@ import {addHistory} from "../../../store/actions";
 import {Settings} from "../../../models/settings";
 import {connect} from "react-redux";
 import HistoryLogger from "./HistoryLogger/HistoryLogger";
+import CommandRecognition from "./CommandRecognition";
+import CommandExecutor from "./CommandExecutor";
 
 type Props = {
     settings: Settings,
@@ -31,11 +33,18 @@ class SpeechRecognitionInstanceBase extends Component<Props> {
             console.log(response);
             const command = response.results[0][0].transcript;
 
-            this.props.addHistory({command});
+            const recognised = CommandRecognition.recogniseCommand(command);
+            this.props.addHistory({command, recognised});
         };
         this.speech.onend = () => this.speech.start();
 
         this.speech.start();
+
+        this.commandExecutor = new CommandExecutor();
+    }
+
+    componentWillUnmount() {
+        this.commandExecutor.closeSubscription();
     }
 
     render() {
