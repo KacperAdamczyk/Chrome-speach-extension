@@ -13,7 +13,7 @@ type Props = {
 
 let HistoryLogger = (props: Props) => {
     return (
-        <div className='history-logger'>
+        <div className='log'>
             {props.history.map((entry, i) => <HistoryLogEntry key={i} entry={entry}/>)}
         </div>
     );

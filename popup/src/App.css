@@ -1,4 +1,54 @@
 .app-container {
-  min-width: 400px;
-  min-height: 800px;
+  width: 30%;
+  margin: 0 auto;
+  padding: 10px;
+  min-width: 300px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.status {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: baseline;
+  padding: 20px 0;
+}
+
+.status .status__icon {
+  animation: mic-animation 2s infinite;
+  font-size: 32px;
+  padding-right: 15px;
+}
+
+@keyframes mic-animation {
+  0% {color: #2b2b2b;}
+  50% {color: #B20000;}
+  100% {color: #2b2b2b;}
+}
+
+.options__label {
+  padding-right: 10px;
+  font-size: 18px;
+  color: #2b2b2b;
+  font-weight: 100;
+}
+
+.options__input {
+    background: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: 100;
+    color: #2b2b2b;
+    outline: 0;
+    transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -webkit-transition: all 300ms linear;
+}
+
+.options__input:hover,
+.options__input:active
+.options__input:focus {
+    border: 1px solid #4a90e2;
 }

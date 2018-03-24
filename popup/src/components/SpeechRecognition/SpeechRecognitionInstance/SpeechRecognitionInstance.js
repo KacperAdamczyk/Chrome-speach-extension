@@ -1,5 +1,5 @@
 /* @flow */
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 
 import {State} from "../../../store/store";
 import {addHistory} from "../../../store/actions";
@@ -34,7 +34,9 @@ class SpeechRecognitionInstanceBase extends Component<Props> {
             const command = response.results[0][0].transcript;
 
             const recognised = CommandRecognition.recogniseCommand(command);
-            this.props.addHistory({command, recognised});
+            let d = new Date();
+            let time = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+            this.props.addHistory({command, recognised, time});
         };
         this.speech.onend = () => this.speech.start();
 
@@ -49,9 +51,15 @@ class SpeechRecognitionInstanceBase extends Component<Props> {
 
     render() {
         return (
-            <div>
-                <HistoryLogger/>
-            </div>
+            <Fragment>
+                <div className="status">
+                    <i className="material-icons status__icon">&#xE029;</i>
+                    <span>Listening</span>
+                </div>
+                <div>
+                    <HistoryLogger/>
+                </div>
+            </Fragment>
         );
     }
 }
