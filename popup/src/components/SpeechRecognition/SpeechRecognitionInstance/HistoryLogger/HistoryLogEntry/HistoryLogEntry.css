@@ -3,9 +3,9 @@
 }
 
 .log-entry--recognised {
-    background-color: green;
+    color: green;
 }
 
 .log-entry--unrecognised {
-    background-color: red;
+    color: red;
 }

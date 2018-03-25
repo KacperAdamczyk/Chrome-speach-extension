@@ -1,5 +1,5 @@
 /* @flow */
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 
 import type {State} from '../../../store/store';
 import {addHistory} from '../../../store/actions';
@@ -51,9 +51,15 @@ class SpeechRecognitionInstanceBase extends Component<Props> {
 
     render() {
         return (
-            <div>
-                <HistoryLogger/>
-            </div>
+            <Fragment>
+                <div className="status">
+                    <i className="material-icons status__icon">&#xE029;</i>
+                    <span>Listening</span>
+                </div>
+                <div>
+                    <HistoryLogger/>
+                </div>
+            </Fragment>
         );
     }
 }
