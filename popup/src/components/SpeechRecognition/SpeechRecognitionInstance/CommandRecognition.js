@@ -9,8 +9,8 @@ class CommandRecognition {
     static recogniseCommand(voiceCommand: string): boolean {
         const state: State = store.getState();
         const commands: Command[] = state.commands;
-        let value = null;
-        const recognisedCommand: Command = commands.find((command: Command) => {
+        let value: string = '';
+        const recognisedCommand: ?Command = commands.find((command: Command) => {
             if (command.voiceCommand.endsWith('*')) {
                 const trimmedVoiceCommand = command.voiceCommand.slice(0, -1);
                 const matched = voiceCommand.startsWith(trimmedVoiceCommand) && voiceCommand.length > trimmedVoiceCommand.length;
