@@ -23,7 +23,7 @@ class AccessProvider extends Component<Props, State> {
             .then(
                 () => this.setState({haveAccess: true}),
                 () => this.setState({haveAccess: false})
-            );
+            ); chrome.runtime.sendMessage('test', (r) => console.log('res', r));
     }
 
     render() {
