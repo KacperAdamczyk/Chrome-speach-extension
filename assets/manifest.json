@@ -9,8 +9,15 @@
     "default_popup": "popup.html"
   },
 
+  "background": {
+    "scripts": ["background/background.bundle.js"],
+    "persistent": false
+  },
+
   "permissions": [
     "activeTab",
-    "storage"
+    "storage",
+    "background",
+    "tabs"
   ]
 }

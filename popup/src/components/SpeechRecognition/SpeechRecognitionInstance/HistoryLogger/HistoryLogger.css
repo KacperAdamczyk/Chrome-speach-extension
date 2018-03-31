@@ -1,3 +1,27 @@
-.history-logger {
-    border: 1px solid green;
+:root {
+    --even-bg-color: #e4e4e4;
+}
+
+.log {
+    max-height: 200px;
+    overflow: auto;
+    background: whitesmoke;
+    border-radius: 10px;
+}
+
+.log-entry {
+    font-size: 1.1em;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.log-entry:nth-child(2n) {
+    background: var(--even-bg-color);
+    border-radius: 10px;
+}
+
+h2 {
+    color: var(--default-font-color);
 }

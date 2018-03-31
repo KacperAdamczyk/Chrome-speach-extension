@@ -3,8 +3,6 @@ import React, {Component} from 'react';
 
 import './AccessProvider.css';
 
-declare var chrome: any;
-
 type Props = {
     children: any
 }

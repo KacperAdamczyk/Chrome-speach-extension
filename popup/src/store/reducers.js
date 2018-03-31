@@ -35,26 +35,7 @@ export function historyReducer(state: History[] = [], action: HistoryAction) {
     }
 }
 
-// TODO remove this.
-const developmentCommands: Command[] = [
-    {
-        voiceCommand: 'play',
-        action: {
-            codeJS: 'document.querySelector(".ytp-play-button").click();'
-        }
-    },
-    {
-        voiceCommand: 'search *',
-        action: {
-            codeJS: `
-            document.querySelector("#search input").value = "@value";
-            document.querySelector("#search-icon-legacy").click();
-            `
-        }
-    }
-];
-
-export function commandsReducer(state: Command[] = developmentCommands, action: CommandsAction) {
+export function commandsReducer(state: Command[] = [], action: CommandsAction) {
     switch (action.type) {
         case SET_COMMANDS:
             return action.payload;

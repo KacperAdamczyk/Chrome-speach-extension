@@ -6,6 +6,7 @@ import './App.css';
 import MediaProvider from './components/AccessProvider/AccessProvider';
 import {store} from './store/store';
 import SpeechRecognition from './components/SpeechRecognition/SpeechRecognition';
+import CommandProvider from './components/CommandProvider/CommandProvider';
 
 class App extends Component<{}> {
     render() {
@@ -13,7 +14,9 @@ class App extends Component<{}> {
             <div className='app-container'>
                 <MediaProvider>
                     <Provider store={store}>
-                        <SpeechRecognition/>
+                        <CommandProvider>
+                            <SpeechRecognition/>
+                        </CommandProvider>
                     </Provider>
                 </MediaProvider>
             </div>

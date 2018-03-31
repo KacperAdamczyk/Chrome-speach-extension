@@ -7,8 +7,9 @@ import type {ExecutionQueueItem} from '../../../models/executionQueueItem';
 
 class CommandRecognition {
     static recogniseCommand(voiceCommand: string): boolean {
+        voiceCommand = voiceCommand.toLowerCase();
         const state: State = store.getState();
-        const commands: Command[] = state.commands;
+        const commands: Command[] = state.commands[state.settings.lang];
         let value: string = '';
         const recognisedCommand: ?Command = commands.find((command: Command) => {
             if (command.voiceCommand.endsWith('*')) {

@@ -1,8 +1,8 @@
 /* @flow */
 import {Settings} from '../models/settings';
 import type {History} from '../models/history';
-import type {Command} from '../models/command';
 import type {ExecutionQueueItem} from '../models/executionQueueItem';
+import type {CommandPage} from '../models/commandPage';
 
 export const SET_SETTINGS: 'SET_SETTINGS' = 'SET_SETTINGS';
 export type SettingAction = {
@@ -24,19 +24,24 @@ export type HistoryAction = {
 };
 
 export function addHistory(history: History): HistoryAction {
+    const d = new Date();
+    const time = `${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
     return {
         type: ADD_TO_HISTORY,
-        payload: history
+        payload: {
+          ...history,
+            time
+        }
     };
 }
 
 export const SET_COMMANDS: 'SET_COMMANDS' = 'SET_COMMANDS';
 export type CommandsAction = {
     type: typeof SET_COMMANDS,
-    payload: Command[]
+    payload: CommandPage
 };
 
-export function setCommands(commands: Command[]) {
+export function setCommands(commands: CommandPage) {
     return {
         type: SET_COMMANDS,
         payload: commands
