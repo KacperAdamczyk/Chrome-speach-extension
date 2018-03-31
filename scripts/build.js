@@ -41,5 +41,15 @@ reactBuildList.forEach(d => {
     shell.mv(`build/${d}/index.html`, `${buildFolderName}/${d}.html`)
 });
 
+console.log(chalk.blue(`Building background...`));
+/* Building background script */
+shell.cd('background');
+shell.exec('yarn build');
+shell.cd('../');
+shell.mv('background/build', 'build/background');
+
+console.log(chalk.blue('Copying files...'));
 /* Copying assets */
 shell.cp('-r', 'assets/*', 'build');
+
+console.log(chalk.blue('Done!'));

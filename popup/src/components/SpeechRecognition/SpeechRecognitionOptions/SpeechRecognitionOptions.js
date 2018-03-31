@@ -9,6 +9,7 @@ import {setSettings} from '../../../store/actions';
 import './SpeechRecognitionOptions.css';
 
 type Props = {
+    commands: any,
     settings: Settings;
     setSettings: (settings: Settings) => void
 }
@@ -21,8 +22,9 @@ class SpeechRecognitionOptionsBase extends Component<Props> {
     render() {
         return (
             <div className="options">
-                <label className="options__label" for="lang">Language: </label>
-                <input className="options__input" name="lang" value={this.props.settings.lang} onChange={this.handleLangInputChange}/>
+                <select value={this.props.settings.lang} onChange={this.handleLangInputChange}>
+                    {Object.keys(this.props.commands).map(lang => <option value={lang}>{lang}</option>)}
+                </select>
             </div>
         );
     }
@@ -30,6 +32,7 @@ class SpeechRecognitionOptionsBase extends Component<Props> {
 
 function mapStateToProps(state: State) {
     return {
+        commands: state.commands,
         settings: state.settings
     };
 }

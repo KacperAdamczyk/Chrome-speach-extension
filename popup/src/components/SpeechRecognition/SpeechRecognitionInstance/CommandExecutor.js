@@ -1,5 +1,4 @@
 /* @flow */
-/* global chrome */
 import {store} from '../../../store/store';
 import type {ExecutionQueueItem} from '../../../models/executionQueueItem';
 import {updateExecutionQueueItem} from '../../../store/actions';
@@ -36,7 +35,7 @@ class CommandExecutor {
     }
 
     executeCode(e: ExecutionQueueItem) {
-        const code = e.value ? e.command.action.codeJS.replace(/@value/g, e.value) : e.command.action.codeJS;
+        const code = e.value ? e.command.codeJS.replace(/@value/g, e.value) : e.command.codeJS;
         chrome.tabs && chrome.tabs.executeScript({code: this.scopeWrapper(code)});
     }
 

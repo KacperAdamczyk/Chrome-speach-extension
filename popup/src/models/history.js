@@ -2,5 +2,5 @@
 export type History = {
     command: string,
     recognised: boolean,
-    time: string
+    time?: string
 }
