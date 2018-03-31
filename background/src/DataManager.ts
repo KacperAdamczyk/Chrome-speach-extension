@@ -1,5 +1,5 @@
+import {ICommand} from './models/Command';
 import {ICommandPage} from './models/CommandPage';
-import {ICommandPageEntry} from './models/CommandPageEntry';
 import {ICommandStorage} from './models/CommandStorage';
 
 class DataManager {
@@ -28,11 +28,11 @@ class DataManager {
     }
 
     private mergeValues(values: ICommandPage[]): ICommandPage {
-        const result = new Map<string, ICommandPageEntry[]>();
+        const result = new Map<string, ICommand[]>();
         values.forEach(commandPage => {
             Object.entries(commandPage).forEach(([lang, entry]) => {
                 result.set(lang, [
-                    ...(result.has(lang) ? result.get(lang) as ICommandPageEntry[] : []),
+                    ...(result.has(lang) ? result.get(lang) as ICommand[] : []),
                     ...entry
                 ]);
             });

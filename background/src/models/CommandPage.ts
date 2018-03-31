@@ -1,5 +1,5 @@
-import {ICommandPageEntry} from './CommandPageEntry';
+import {ICommand} from './Command';
 
 export interface ICommandPage {
-    [lang: string]: ICommandPageEntry[];
+    [lang: string]: ICommand[];
 }

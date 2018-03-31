@@ -3,8 +3,6 @@ import React, {Component} from 'react';
 
 import './AccessProvider.css';
 
-declare var chrome: any;
-
 type Props = {
     children: any
 }
@@ -23,7 +21,7 @@ class AccessProvider extends Component<Props, State> {
             .then(
                 () => this.setState({haveAccess: true}),
                 () => this.setState({haveAccess: false})
-            ); chrome.runtime.sendMessage({type: 'GET_COMMANDS', payload: 'youtube.com'}, (r) => console.log('res', r));
+            );
     }
 
     render() {

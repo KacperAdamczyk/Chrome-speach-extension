@@ -17,20 +17,13 @@ type Props = {
 
 class SpeechRecognitionInstanceBase extends Component<Props> {
     BrowserSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    SpeechGrammarList = window.SpeechGrammarList || window.webkitSpeechGrammarList;
     speech: any;
     commandExecutor: CommandExecutor;
 
     componentDidMount() {
-        // const grammar = '#JSGF V1.0; grammar phrase; public <phrase> = ' + phrase + ';';
-        // const speechRecognitionList = new this.SpeechGrammarList();
-        // speechRecognitionList.addFromString(grammar, 1);
-
         this.speech = new this.BrowserSpeechRecognition();
         this.speech.lang = this.props.settings.lang;
-
         this.speech.continous = true;
-        // this.speech.grammars = speechRecognitionList;
 
         this.speech.onresult = response => {
             const command = response.results[0][0].transcript;
@@ -43,6 +36,10 @@ class SpeechRecognitionInstanceBase extends Component<Props> {
         this.speech.start();
 
         this.commandExecutor = new CommandExecutor();
+    }
+
+    componentDidUpdate() {
+        this.speech.lang = this.props.settings.lang;
     }
 
     componentWillUnmount() {

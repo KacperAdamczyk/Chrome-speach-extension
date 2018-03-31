@@ -1,3 +1,3 @@
-export interface ICommandPageEntry {
+export interface ICommand {
     [voiceCommand: string]: string;
 }
