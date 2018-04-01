@@ -29,7 +29,7 @@ class AccessProvider extends Component<Props, State> {
             this.state.haveAccess ?
                 this.props.children :
                 <div className='no-access'>
-                    No access to media
+                    <span>No access to microphone</span>
                     <a href='access-page/access-page.html' target="_blank">Provide access</a>
                 </div>
         );

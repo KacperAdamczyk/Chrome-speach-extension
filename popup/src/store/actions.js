@@ -18,9 +18,10 @@ export function setSettings(settings: Settings): SettingAction {
 }
 
 export const ADD_TO_HISTORY: 'ADD_TO_HISTORY' = 'ADD_TO_HISTORY';
+export const CLEAR_HISTORY: 'CLEAR_HISTORY' = 'CLEAR_HISTORY';
 export type HistoryAction = {
-    type: typeof ADD_TO_HISTORY,
-    payload: History
+    type: typeof ADD_TO_HISTORY | typeof CLEAR_HISTORY,
+    payload?: History
 };
 
 export function addHistory(history: History): HistoryAction {
@@ -32,6 +33,12 @@ export function addHistory(history: History): HistoryAction {
           ...history,
             time
         }
+    };
+}
+
+export function clearHistory(): HistoryAction {
+    return {
+        type: CLEAR_HISTORY
     };
 }
 

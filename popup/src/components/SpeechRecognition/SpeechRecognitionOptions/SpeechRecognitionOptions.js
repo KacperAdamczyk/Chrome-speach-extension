@@ -21,11 +21,11 @@ class SpeechRecognitionOptionsBase extends Component<Props> {
 
     render() {
         return (
-            <div className="options">
-                <select value={this.props.settings.lang} onChange={this.handleLangInputChange}>
-                    {Object.keys(this.props.commands).map(lang => <option value={lang}>{lang}</option>)}
+            <section className='option-section'>
+                <select className='custom-select' value={this.props.settings.lang} onChange={this.handleLangInputChange}>
+                    {Object.keys(this.props.commands).map(lang => <option value={lang} key={lang}>{lang}</option>)}
                 </select>
-            </div>
+            </section>
         );
     }
 }
