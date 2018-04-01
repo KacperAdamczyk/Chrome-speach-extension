@@ -1,0 +1,19 @@
+.command-preview {
+    margin: 10px 0;
+}
+
+.command-preview__list {
+    list-style-type: none;
+    padding: 5px;
+}
+
+.command-preview__list li {
+    margin: 2px 0;
+    padding: 3px 6px;
+    border: 2px whitesmoke solid;
+    border-radius: 5px;
+}
+
+.command-preview__list li:nth-child(even) {
+    background-color: whitesmoke;
+}

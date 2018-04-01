@@ -1,14 +1,17 @@
 /* @flow */
 import React, {Component, Fragment} from 'react';
+import {connect} from 'react-redux';
 
 import type {State} from '../../../store/store';
 import {addHistory} from '../../../store/actions';
 import type {Settings} from '../../../models/settings';
 import type {History} from '../../../models/history';
-import {connect} from 'react-redux';
 import HistoryLogger from './HistoryLogger/HistoryLogger';
 import CommandRecognition from './CommandRecognition';
 import CommandExecutor from './CommandExecutor';
+import CommandPreview from './CommandPreview/CommandPreview';
+
+import './SpeechRecognitionInstance.css';
 
 type Props = {
     settings: Settings,
@@ -26,7 +29,7 @@ class SpeechRecognitionInstanceBase extends Component<Props> {
         this.speech.continous = true;
 
         this.speech.onresult = response => {
-            const command = response.results[0][0].transcript;
+            const command = response.results[0][0].transcript.toLowerCase();
 
             const recognised = CommandRecognition.recogniseCommand(command);
             this.props.addHistory(({command, recognised}: History));
@@ -49,11 +52,15 @@ class SpeechRecognitionInstanceBase extends Component<Props> {
     render() {
         return (
             <Fragment>
-                <div className="status">
-                    <i className="material-icons status__icon">&#xE029;</i>
-                    <span>Listening</span>
+                <div className="indicator">
+                    <span className='indicator__icon'>
+                        <div className='indicator__icon__halo'/>
+                        <i className='material-icons'>&#xE029;</i>
+                    </span>
+                    <span><small><strong>Listening</strong></small></span>
                 </div>
                 <div>
+                    <CommandPreview/>
                     <HistoryLogger/>
                 </div>
             </Fragment>
@@ -63,7 +70,7 @@ class SpeechRecognitionInstanceBase extends Component<Props> {
 
 function mapStateToProps(state: State) {
     return {
-        settings: state.settings,
+        settings: state.settings
     };
 }
 

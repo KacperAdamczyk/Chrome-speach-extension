@@ -2,7 +2,7 @@
 import type {CommandsAction, ExecutionQueueAction, HistoryAction, SettingAction} from './actions';
 import {
     ADD_TO_EXECUTION_QUEUE,
-    ADD_TO_HISTORY,
+    ADD_TO_HISTORY, CLEAR_HISTORY,
     SET_COMMANDS,
     SET_SETTINGS,
     UPDATE_EXECUTION_QUEUE_ITEM
@@ -30,6 +30,8 @@ export function historyReducer(state: History[] = [], action: HistoryAction) {
     switch (action.type) {
         case ADD_TO_HISTORY:
             return [...state, action.payload];
+        case CLEAR_HISTORY:
+            return [];
         default:
             return state;
     }
