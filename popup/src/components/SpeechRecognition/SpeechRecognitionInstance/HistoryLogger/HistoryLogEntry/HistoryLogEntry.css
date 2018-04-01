@@ -1,11 +1,15 @@
-.log-entry {
-
+.history-log-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2px 0;
+    padding: 6px 10px;
 }
 
-.log-entry--recognised {
-    color: green;
+.history-log-entry__command {
+    font-weight: bold;
 }
 
-.log-entry--unrecognised {
-    color: red;
+.history-log-entry__time {
+    font-size: 0.75em;
 }

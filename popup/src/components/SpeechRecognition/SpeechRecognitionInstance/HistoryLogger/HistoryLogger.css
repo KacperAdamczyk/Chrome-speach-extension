@@ -2,26 +2,21 @@
     --even-bg-color: #e4e4e4;
 }
 
-.log {
+.history-log {
     max-height: 200px;
-    overflow: auto;
-    background: whitesmoke;
     border-radius: 10px;
+    background-color: whitesmoke;
 }
 
-.log-entry {
-    font-size: 1.1em;
-    padding: 5px 10px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
+.history-log__title {
+    padding: 5px 8px;
+    font-weight: bold;
 }
 
-.log-entry:nth-child(2n) {
-    background: var(--even-bg-color);
-    border-radius: 10px;
-}
-
-h2 {
-    color: var(--default-font-color);
+.history-log__clear-button {
+    display: block;
+    margin-top: 4px;
+    margin-left: auto;
+    font-size: 0.875em;
+    padding: 3px 6px;
 }

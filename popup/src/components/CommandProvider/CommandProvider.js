@@ -6,6 +6,8 @@ import {setCommands} from '../../store/actions';
 import type {Command} from '../../models/command';
 import type {CommandPage} from '../../models/commandPage';
 
+import './CommandProvider';
+
 declare var chrome: any;
 
 type Props = {
@@ -29,8 +31,8 @@ class CommandProviderBase extends Component<Props, State> {
     render() {
         return (
             Object.keys(this.props.commands).length ?
-            this.props.children :
-                <div>There is no commands matching this website.</div>
+                this.props.children :
+                <div className='no-commands'>There is no commands defined matching this website.</div>
         );
     }
 }
@@ -43,7 +45,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        setCommands: (commands) =>dispatch(setCommands(commands))
+        setCommands: (commands) => dispatch(setCommands(commands))
     };
 }
 
