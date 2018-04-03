@@ -4,7 +4,7 @@ const chalk = require('chalk');
 /* CONFIG */
 const required = ['yarn'];
 const buildFolderName = 'build';
-const reactBuildList = ['popup'];
+const reactBuildList = ['popup', 'manager'];
 /* --CONFIG-- */
 
 /* Dependencies test */

@@ -9,8 +9,8 @@ import {
 } from './actions';
 import {Settings} from '../models/settings';
 import type {History} from '../models/history';
-import type {Command} from '../models/command';
 import type {ExecutionQueueItem} from '../models/executionQueueItem';
+import type {CommandPage} from '../models/commandPage';
 
 const defaultSettings: Settings = {
     lang: 'en-US'
@@ -37,7 +37,7 @@ export function historyReducer(state: History[] = [], action: HistoryAction) {
     }
 }
 
-export function commandsReducer(state: Command[] = [], action: CommandsAction) {
+export function commandsReducer(state: CommandPage = {}, action: CommandsAction) {
     switch (action.type) {
         case SET_COMMANDS:
             return action.payload;
