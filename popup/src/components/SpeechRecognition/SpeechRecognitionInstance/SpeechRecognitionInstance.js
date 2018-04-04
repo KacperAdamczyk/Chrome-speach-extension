@@ -27,12 +27,26 @@ class SpeechRecognitionInstanceBase extends Component<Props> {
         this.speech = new this.BrowserSpeechRecognition();
         this.speech.lang = this.props.settings.lang;
         this.speech.continous = true;
+        this.speech.maxAlternatives = 2;
 
         this.speech.onresult = response => {
-            const command = response.results[0][0].transcript.toLowerCase();
+            let commandHistory = [];
+            const recognised = Object.values(response.results[0])
+                .some(result => {
+                    const transcript = (result: any).transcript.toLowerCase();
+                     const recognisedCommand = CommandRecognition.recogniseCommand(transcript);
+                    commandHistory.push(transcript);
+                     if (recognisedCommand) {
+                         CommandRecognition.addToExecutionQueue(recognisedCommand);
+                         return true;
+                     }
+                     return false;
+                });
 
-            const recognised = CommandRecognition.recogniseCommand(command);
-            this.props.addHistory(({command, recognised}: History));
+            this.props.addHistory(({
+                command: commandHistory.join(' | '),
+                recognised
+            }: History));
         };
         this.speech.onend = () => this.speech.start();
 
