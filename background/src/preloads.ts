@@ -42,6 +42,18 @@ const preloads: ICommandStorage = {
                 `,
                 voiceCommand: 'volume *'
             },
+            {
+                codeJS: `
+                document.querySelector('#logo-icon-container').click()
+                `,
+                voiceCommand: 'main page'
+            },
+            {
+                codeJS: `
+                document.querySelectorAll('#video-title')[Number.parseInt("@value")].click()
+                `,
+                voiceCommand: 'select *'
+            },
         ],
         'pl-PL': [
             {
@@ -74,6 +86,18 @@ const preloads: ICommandStorage = {
                 video.volume = Number.isNaN() ? video.volume : volume / 100;
                 `,
                 voiceCommand: 'głośność *'
+            },
+            {
+                codeJS: `
+                document.querySelector('#logo-icon-container').click()
+                `,
+                voiceCommand: 'strona główna'
+            },
+            {
+                codeJS: `
+                document.querySelectorAll('#video-title')[Number.parseInt("@value")].click()
+                `,
+                voiceCommand: 'wybierz *'
             },
         ]
     },
