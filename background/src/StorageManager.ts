@@ -27,7 +27,7 @@ class StorageManager {
     }
 
     public isInitNeeded(): Promise<boolean> {
-        return this.load().then(c => !Object.keys(c).length);
+        return this.load().then(c => !c);
     }
 }
 

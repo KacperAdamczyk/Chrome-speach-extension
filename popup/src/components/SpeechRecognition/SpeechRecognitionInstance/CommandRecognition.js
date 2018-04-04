@@ -6,7 +6,7 @@ import {addToExecutionQueue} from '../../../store/actions';
 import type {ExecutionQueueItem} from '../../../models/executionQueueItem';
 
 class CommandRecognition {
-    static recogniseCommand(voiceCommand: string): boolean {
+    static recogniseCommand(voiceCommand: string): ?ExecutionQueueItem {
         const state: State = store.getState();
         const commands: Command[] = state.commands[state.settings.lang];
         let value: string = '';
@@ -22,16 +22,11 @@ class CommandRecognition {
                 return command.voiceCommand === voiceCommand;
             }
         });
-        if (recognisedCommand) {
-            const executionQueueItem: ExecutionQueueItem = {
-                command: recognisedCommand,
-                executed: false,
-                value
-            };
-            store.dispatch(addToExecutionQueue(executionQueueItem));
-        }
+        return recognisedCommand ? {command: recognisedCommand, executed: false, value} : null;
+    }
 
-        return !!recognisedCommand;
+    static addToExecutionQueue(item: ExecutionQueueItem) {
+        store.dispatch(addToExecutionQueue(item));
     }
 }
 
