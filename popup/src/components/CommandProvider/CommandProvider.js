@@ -32,7 +32,7 @@ class CommandProviderBase extends Component<Props, State> {
         return (
             Object.keys(this.props.commands).length ?
                 this.props.children :
-                <div className='no-commands'>There is no commands defined matching this website.</div>
+                <div className='no-commands'>There are no commands defined matching this website.</div>
         );
     }
 }
