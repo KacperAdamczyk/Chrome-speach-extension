@@ -12,10 +12,6 @@ if (testedReq.length) {
     shell.exit(1);
 }
 
-/* Installing at root */
-console.log(chalk.blue('Installing at root'));
-shell.exec('yarn install');
-
 innerFolders.forEach(path => {
     console.log(chalk.blue(`Installing at '${path}'`));
     shell.cd(path);
