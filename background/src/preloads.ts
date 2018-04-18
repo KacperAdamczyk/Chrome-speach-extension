@@ -28,7 +28,7 @@ const preloads: ICommandStorage = {
             {
                 codeJS: `
                 const searchInput = document.querySelector("#search input");
-                const searchButton = document.querySelector("#search-icon-legacy");
+                const searchButton = document.querySelector("button.ytd-searchbox");
                 searchInput.value = "@value";
                 searchButton.click();
                 `,
@@ -37,10 +37,17 @@ const preloads: ICommandStorage = {
             {
                 codeJS: `
                 const video = document.querySelector("video");
-                const volume = Number.parseInt("@value");
-                video.volume = Number.isNaN() ? video.volume : volume / 100;
+                const volume = @numericValue;
+                video.volume = Number.isNaN(volume) ? video.volume : volume / 100;
                 `,
                 voiceCommand: 'volume *'
+            },
+            {
+                codeJS: `
+                const video = document.querySelector("video");
+                video.volume = 0;
+                `,
+                voiceCommand: 'mute'
             },
             {
                 codeJS: `
@@ -50,7 +57,7 @@ const preloads: ICommandStorage = {
             },
             {
                 codeJS: `
-                document.querySelectorAll('#video-title')[Number.parseInt("@value")].click()
+                document.querySelectorAll('ytd-search img')[@numericValue].click();
                 `,
                 voiceCommand: 'select *'
             },
@@ -73,7 +80,7 @@ const preloads: ICommandStorage = {
             {
                 codeJS: `
                 const searchInput = document.querySelector("#search input");
-                const searchButton = document.querySelector("#search-icon-legacy");
+                const searchButton = document.querySelector("button.ytd-searchbox");
                 searchInput.value = "@value";
                 searchButton.click();
                 `,
@@ -82,8 +89,15 @@ const preloads: ICommandStorage = {
             {
                 codeJS: `
                 const video = document.querySelector("video");
-                const volume = Number.parseInt("@value");
-                video.volume = Number.isNaN() ? video.volume : volume / 100;
+                video.volume = 0;
+                `,
+                voiceCommand: 'wycisz'
+            },
+            {
+                codeJS: `
+                const video = document.querySelector("video");
+                const volume = @numericValue;
+                video.volume = Number.isNaN(volume) ? video.volume : volume / 100;
                 `,
                 voiceCommand: 'głośność *'
             },
@@ -95,7 +109,7 @@ const preloads: ICommandStorage = {
             },
             {
                 codeJS: `
-                document.querySelectorAll('#video-title')[Number.parseInt("@value")].click()
+                document.querySelectorAll('ytd-search img')[@numericValue].click();
                 `,
                 voiceCommand: 'wybierz *'
             },
