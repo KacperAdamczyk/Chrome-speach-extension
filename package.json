@@ -11,6 +11,6 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "install-all": "node scripts/install.js"
+    "install": "node scripts/install.js"
   }
 }

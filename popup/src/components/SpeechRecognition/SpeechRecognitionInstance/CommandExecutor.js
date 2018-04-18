@@ -2,8 +2,18 @@
 import {store} from '../../../store/store';
 import type {ExecutionQueueItem} from '../../../models/executionQueueItem';
 import {updateExecutionQueueItem} from '../../../store/actions';
+import dictionary from './NumberDisctionary';
 
 declare var chrome: any;
+
+type MetaTags = {
+    [key: string]: (value: string) => string
+}
+
+const metaTags: MetaTags = {
+    '@value': (value: string) => `${value}`,
+    '@numericValue': (value: string) => Number(dictionary[value] || value)
+};
 
 class CommandExecutor {
     subscription: {
@@ -35,8 +45,15 @@ class CommandExecutor {
     }
 
     executeCode(e: ExecutionQueueItem) {
-        const code = e.value ? e.command.codeJS.replace(/@value/g, e.value) : e.command.codeJS;
+        const code = e.value ? this.expandMetaTags(e.command.codeJS, e.value) : e.command.codeJS;
         chrome.tabs && chrome.tabs.executeScript({code: this.scopeWrapper(code)});
+    }
+
+    expandMetaTags(code: string, value: string): string {
+        Object.entries(metaTags).forEach(([key, transform]) => {
+            code = code.replace(new RegExp(key, 'g'), transform(value));
+        });
+        return code;
     }
 
     scopeWrapper(code: string) {
