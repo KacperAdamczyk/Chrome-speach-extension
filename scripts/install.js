@@ -1,20 +1,17 @@
 const shell = require('shelljs');
 const chalk = require('chalk');
 
-const innerFolders = ['background', 'popup'];
+const innerFolders = ['background', 'popup', 'manager'];
 
-const required = ['yarn'];
-
-/* Dependencies test */
-const testedReq = required.map(r => shell.which(r) ? null : r).filter(r => !!r);
-if (testedReq.length) {
-    shell.echo(chalk.red(`Sorry, this packages are required: ${testedReq.join(', ')}`));
-    shell.exit(1);
-}
+/* Getting package manager */
+preferedPM = 'yarn';
+fallbackPM = 'npm';
+const logFallback = () => console.log(chalk.yellow(`\n'${preferedPM}' was not found, '${fallbackPM}' will be used instead.\n`));
+const pm = shell.which(preferedPM) ? preferedPM : logFallback() || preferedPM;
 
 innerFolders.forEach(path => {
-    console.log(chalk.blue(`Installing at '${path}'`));
+    console.log(chalk.blue(`\nInstalling at '${path}'\n`));
     shell.cd(path);
-    shell.exec('yarn install');
+    shell.exec(`${pm} install`);
     shell.cd('../');
 });

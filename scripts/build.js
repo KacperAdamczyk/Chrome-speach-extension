@@ -2,17 +2,14 @@ const shell = require('shelljs');
 const chalk = require('chalk');
 
 /* CONFIG */
-const required = ['yarn'];
 const buildFolderName = 'build';
 const reactBuildList = ['popup', 'manager'];
-/* --CONFIG-- */
 
-/* Dependencies test */
-const testedReq = required.map(r => shell.which(r) ? null : r).filter(r => !!r);
-if (testedReq.length) {
-    shell.echo(chalk.red(`Sorry, this packages are required: ${testedReq.join(', ')}`));
-    shell.exit(1);
-}
+/* Getting package manager */
+preferedPM = 'yarn';
+fallbackPM = 'npm';
+const logFallback = () => console.log(chalk.yellow(`\n'${preferedPM}' was not found, '${fallbackPM}' will be used instead.\n`));
+const pm = shell.which(preferedPM) ? preferedPM : logFallback() || preferedPM;
 
 /* Removing old files */
 if (shell.ls().some(f => f === buildFolderName)) {
@@ -32,7 +29,7 @@ reactBuildList.forEach(d => {
     /* Change direction to build directory */
     shell.cd(d);
     /* Run build */
-    shell.exec('yarn build');
+    shell.exec(`${pm} build`);
     /* Going back */
     shell.cd('..');
     /* Moving files from dependency build folder to main build folder */
@@ -44,7 +41,7 @@ reactBuildList.forEach(d => {
 console.log(chalk.blue(`Building background...`));
 /* Building background script */
 shell.cd('background');
-shell.exec('yarn build');
+shell.exec(`${pm} build`);
 shell.cd('../');
 shell.mv('background/build', 'build/background');
 
