@@ -6,10 +6,11 @@
   "author": "Kacper Adamczyk <kaacpers@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^2.3.2",
+    "chalk": "^2.4.0",
     "shelljs": "^0.8.1"
   },
   "scripts": {
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "install": "node scripts/install.js"
   }
 }
