@@ -1,0 +1,36 @@
+.code-editor__toolbar {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.code-editor__toolbar > :not(:last-child) {
+    margin-right: 10px;
+}
+
+.code-editor__toolbar > button {
+    display: flex;
+}
+
+.code-editor__toolbar__sync {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    background-color: limegreen;
+    border-radius: 100%;
+}
+
+.code-editor__toolbar__sync-enter {
+    opacity: 0;
+}
+.code-editor__toolbar__sync-enter-active {
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
+}
+.code-editor__toolbar__sync-exit {
+    opacity: 1;
+}
+.code-editor__toolbar__sync-exit-active {
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+}

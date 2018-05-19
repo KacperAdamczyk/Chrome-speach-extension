@@ -14,10 +14,14 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.runtime.onMessage.addListener((request: IAction<ICommandStorage | string | null>, sender, sendResponse) => {
     const storageManager = new StorageManager();
+    console.log('request:', request);
 
     switch (request.type) {
         case ActionType.GET_COMMANDS:
             storageManager.load().then(data => sendResponse(new DataManager(data).getFor(request.payload as string)));
+            break;
+        case ActionType.GET_ALL_COMMANDS:
+            storageManager.load().then(data => sendResponse(data));
             break;
         case ActionType.SAVE_COMMANDS:
             break;
@@ -25,5 +29,5 @@ chrome.runtime.onMessage.addListener((request: IAction<ICommandStorage | string 
             return sendResponse('Action not found.');
     }
 
-    return true;
+    return true; /* This indicates async sendResponse call */
 });

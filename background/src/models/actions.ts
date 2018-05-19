@@ -1,6 +1,7 @@
 export enum ActionType {
     GET_COMMANDS = 'GET_COMMANDS',
-    SAVE_COMMANDS = 'SAVE_COMMANDS',
+    GET_ALL_COMMANDS = 'GET_ALL_COMMANDS',
+    SAVE_COMMANDS = 'SAVE_COMMANDS'
 }
 
 export interface IAction<T> {

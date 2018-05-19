@@ -1,0 +1,19 @@
+.editor__addition {
+    width: 100%;
+}
+
+.editor__action-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 5px;
+}
+
+.editor__action-buttons > button {
+    display: flex;
+    margin-right: 5px;
+}
+
+.editor__action-buttons > button:last-child:not(:only-child) {
+    margin-left: auto;
+    margin-right: 0;
+}
