@@ -1,0 +1,17 @@
+.metatags-table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.metatags-table tr:not(:first-child) {
+    border-top: 1px solid gray;
+}
+
+.metatags-table td {
+    padding: 5px;
+}
+
+.metatags-table__tag {
+    font-weight: bold;
+    color: rebeccapurple;
+}

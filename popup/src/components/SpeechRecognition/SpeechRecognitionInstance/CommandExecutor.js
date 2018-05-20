@@ -16,9 +16,7 @@ const metaTags: MetaTags = {
 };
 
 class CommandExecutor {
-    subscription: {
-        unsubscribe: () => void
-    };
+    unsubscribe: () => void;
     onStateChanged = () => {
         const state = store.getState();
         const commandsToExecute = this.getCommandsToExecute(state.executionQueue);
@@ -26,11 +24,13 @@ class CommandExecutor {
     };
 
     constructor() {
-        this.subscription = store.subscribe(this.onStateChanged);
+        this.unsubscribe = store.subscribe(this.onStateChanged);
     }
 
     closeSubscription() {
-        this.subscription.unsubscribe();
+        if (this.unsubscribe) {
+            this.unsubscribe();
+        }
     }
 
     getCommandsToExecute(queue: ExecutionQueueItem[]) {

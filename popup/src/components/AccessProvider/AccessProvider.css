@@ -1,14 +1,18 @@
 .no-access {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
-    border: 2px dashed red;
-    padding: 5px;
+    justify-content: center;
+    align-content: center;
 }
 
-.no-access span, .no-access a {
-    font-size: 1.45rem;
-    font-weight: bold;
+.no-access > span {
+    text-align: center;
+}
+
+.no-access > a {
+    margin-top: 10px;
+}
+
+.no-access > a > button {
+    width: 100%;
 }

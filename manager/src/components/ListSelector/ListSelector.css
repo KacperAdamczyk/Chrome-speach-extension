@@ -1,0 +1,22 @@
+.list-selector {
+    height: calc(100% - var(--list-selector-header-height));
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    --bg-color: #afafaf;
+    border-radius: 10px;
+    background-color: var(--bg-color);
+}
+
+.list-selector__search {
+    padding: 8px 8px 4px;
+}
+
+.list-selector__search button {
+    display: flex;
+}
+
+.list-selector__editor {
+    padding: 8px;
+    margin-top: auto;
+}

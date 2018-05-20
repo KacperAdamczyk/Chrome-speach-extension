@@ -69,7 +69,7 @@ class SpeechRecognitionInstanceBase extends Component<Props> {
                 <div className="indicator">
                     <span className='indicator__icon'>
                         <div className='indicator__icon__halo'/>
-                        <i className='material-icons'>&#xE029;</i>
+                        <i className='material-icons'>mic</i>
                     </span>
                     <span><small><strong>Listening</strong></small></span>
                 </div>
@@ -88,11 +88,9 @@ function mapStateToProps(state: State) {
     };
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        addHistory: (history: History) => dispatch(addHistory(history))
-    };
-}
+const mapDispatchToProps = {
+    addHistory
+};
 
 const SpeechRecognitionInstance = connect(mapStateToProps, mapDispatchToProps)(SpeechRecognitionInstanceBase);
 

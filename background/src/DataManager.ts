@@ -7,8 +7,18 @@ class DataManager {
     }
 
     public getFor(url: string): ICommandPage {
-        // TODO add removing duplicates
-        return this.mergeValues(this.getValuesFromEntries(this.sortForMerge(this.getMatchingEntries(url))));
+        return this.pipe(
+            url,
+            this.getMatchingEntries,
+            this.sortForMerge,
+            this.getValuesFromEntries,
+            this.mergeValues,
+            this.removeDuplicates
+        );
+    }
+
+    private pipe(startValue: any, ...fns: Array<(value: any) => any>): any {
+        return fns.reduce((val, fn) => fn.call(this, val), startValue);
     }
 
     private getMatchingEntries(urlToMatch: string): Array<[string, ICommandPage]> {
@@ -39,6 +49,17 @@ class DataManager {
         });
 
         return [...result].reduce((acc, [lang, value]) => ({...acc, [lang]: value}), {});
+    }
+
+    private removeDuplicates(value: ICommandPage): ICommandPage {
+        return Object.entries(value).reduce((acc, [lang, commands]: [string, ICommand[]]) => {
+            const commandsIn = new Set();
+            return {
+                ...acc,
+                [lang]: commands.filter((command: ICommand) =>
+                    commandsIn.has(command.voiceCommand) ? false : (commandsIn.add(command.voiceCommand), true))
+            };
+        }, {});
     }
 }
 
