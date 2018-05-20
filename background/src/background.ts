@@ -7,13 +7,14 @@ chrome.runtime.onInstalled.addListener(() => {
     const storageManager = new StorageManager();
     storageManager.isInitNeeded().then(r => {
         if (r) {
-            void storageManager.addPresets();
+            void storageManager.setPresets();
         }
     });
 });
 
 chrome.runtime.onMessage.addListener((request: IAction<ICommandStorage | string | null>, sender, sendResponse) => {
     const storageManager = new StorageManager();
+    // noinspection TsLint
     console.log('request:', request);
 
     switch (request.type) {
@@ -24,6 +25,10 @@ chrome.runtime.onMessage.addListener((request: IAction<ICommandStorage | string 
             storageManager.load().then(data => sendResponse(data));
             break;
         case ActionType.SAVE_COMMANDS:
+            storageManager.save(request.payload as ICommandStorage).then(() => sendResponse('Saved.'));
+            break;
+        case ActionType.RESET_COMMANDS:
+            storageManager.setPresets().then(() => sendResponse('Reset to default.'));
             break;
         default:
             return sendResponse('Action not found.');

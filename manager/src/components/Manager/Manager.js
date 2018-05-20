@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {CSSTransition} from 'react-transition-group';
 
 import {selectedCommand, selectedLang, selectedPage} from '../../store/selectors';
+import {startResettingCommands} from '../../store/actions';
 import CodeEditor from './CodeEditor/CodeEditor';
 import type {Command} from '../../models/command';
 import PageSelector from './PageSelector/PageSelector';
@@ -18,6 +19,7 @@ type Props = {
     selectedPage: ?string,
     selectedLang: ?string,
     selectedCommand: ?Command,
+    startResettingCommands: () => void
 }
 
 let Manager = (props: Props) => {
@@ -27,7 +29,7 @@ let Manager = (props: Props) => {
     return (
         <Fragment>
             <div className='manager-toolbar'>
-                <button className='btn btn-primary btn-sm'>Reset to default</button>
+                <button className='btn btn-primary btn-sm' onClick={props.startResettingCommands}>Reset to default</button>
             </div>
             <div className='manager'>
                 <PageSelector/>
@@ -61,6 +63,10 @@ const mapStateToProps = createSelector(
     })
 );
 
-Manager = connect(mapStateToProps)(Manager);
+const mapDispatchToProps = {
+    startResettingCommands
+};
+
+Manager = connect(mapStateToProps, mapDispatchToProps)(Manager);
 
 export default Manager;

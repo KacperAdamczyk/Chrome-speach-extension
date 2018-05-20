@@ -1,3 +1,4 @@
 export interface ICommand {
-    [voiceCommand: string]: string;
+    voiceCommand: string;
+    codeJS: string;
 }

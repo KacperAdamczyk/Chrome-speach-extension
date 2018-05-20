@@ -31,7 +31,7 @@ class CommandSelectorBase extends Component<Props> {
         this.props.selectCommand(newCommand);
     };
     onEdit = (voiceCommand: string) => {
-        const editTo = {voiceCommand, codeJS: ''};
+        const editTo = {voiceCommand, codeJS: (this.props.selectedCommand && this.props.selectedCommand.codeJS) || ''};
         this.props.editCommand(editTo, this.props.selectedPage, this.props.selectedLang, this.props.selectedCommand);
         this.props.selectCommand(editTo);
     };

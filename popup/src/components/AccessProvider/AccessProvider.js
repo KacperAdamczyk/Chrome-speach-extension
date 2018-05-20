@@ -30,7 +30,9 @@ class AccessProvider extends Component<Props, State> {
                 this.props.children :
                 <div className='no-access'>
                     <span>No access to microphone</span>
-                    <a href='access-page/access-page.html' target="_blank">Provide access</a>
+                    <a href='access-page/access-page.html' target='_blank'>
+                        <button className='btn btn-outline-danger'>Access provider page</button>
+                    </a>
                 </div>
         );
     }

@@ -1,6 +1,6 @@
 /* @flow */
-import {store} from './store/store';
 import type {State} from './store/store';
+import {store} from './store/store';
 import type {Command} from './models/command';
 import {Synchronization} from './models/synchronization';
 import type {Commands} from './models/commands';
@@ -12,6 +12,7 @@ declare var chrome: any;
 class DataSynchronizer {
     unsubscribe: () => void;
     oldCommands: Commands;
+
     constructor() {
         this.importCommands();
         this.oldCommands = store.getState().commands;
@@ -33,11 +34,12 @@ class DataSynchronizer {
         this.oldCommands = state.commands;
 
         const sync: Synchronization = state.synchronization;
-        if (sync.importing) {
-            this.importCommands();
-        }
         if (sync.resetting) {
             this.resetCommands();
+            this.importCommands();
+        }
+        if (sync.importing) {
+            this.importCommands();
         }
     };
 
@@ -55,7 +57,9 @@ class DataSynchronizer {
 
     resetCommands() {
         chrome.runtime.sendMessage({type: 'RESET_COMMANDS'});
-        store.dispatch(finishResettingCommands());
+        if (window.confirm('Are you sure to reset all commands?')) {
+            store.dispatch(finishResettingCommands());
+        }
     }
 
 }

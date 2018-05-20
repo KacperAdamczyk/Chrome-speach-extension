@@ -37,11 +37,9 @@ function mapStateToProps(state: State) {
     };
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        setSettings: (settings: Settings) => dispatch(setSettings(settings))
-    };
-}
+const mapDispatchToProps = {
+    setSettings
+};
 
 const SpeechRecognitionOptions = connect(mapStateToProps, mapDispatchToProps)(SpeechRecognitionOptionsBase);
 

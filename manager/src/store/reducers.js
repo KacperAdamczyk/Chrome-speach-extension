@@ -93,11 +93,12 @@ function langReducer(state: Commands, action: CommandsAction<string>): Commands 
             if (!state.has(selectedPage) || !state.hasIn([selectedPage, selectedLang]) || state.hasIn([selectedPage, newValue])) {
                 return state;
             }
+            if (!selectedPage || !newValue) return state;
             const valueOfEditedLang = state.getIn([selectedPage, selectedLang]);
             return state.deleteIn([selectedPage, selectedLang]).mergeDeep(
                 {
                     [selectedPage]: {
-                        [selectedLang]: valueOfEditedLang
+                        [newValue]: valueOfEditedLang
                     }
                 }
             );
@@ -117,7 +118,9 @@ function commandReducer(state: Commands, action: CommandsAction<Command>): Comma
     const selectedLang = action.meta && action.meta.navigation && action.meta.navigation.selectedLang;
     const selectedCommand = action.meta && action.meta.navigation && action.meta.navigation.selectedCommand;
     const commandsList = state.getIn([selectedPage, selectedLang]);
-    const isAlreadyIn = commandsList.some(c => c.get('voiceCommand') === (newCommand && newCommand.voiceCommand));
+    const isAlreadyIn = commandsList.some(c =>
+        (c.get('voiceCommand') === (newCommand && newCommand.voiceCommand)) &&
+        (c.get('codeJS') === (newCommand && newCommand.codeJS)));
 
     switch (action.type) {
         case ADD_NEW_COMMAND:
