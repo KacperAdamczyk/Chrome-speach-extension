@@ -1,6 +1,6 @@
 # TM-Project
 
-Internal scripts require <code>yarn</code> so make sure it's installed.
+Internal scripts use <code>yarn</code> by default but there is a fallback to <code>npm</code>, <i>not yet tested though</i>.
 
 Use:
 <ul>
@@ -9,3 +9,5 @@ Use:
 </ul>
 
 Builded extension is ready to be added to <b>chrome</b>.
+
+Have fun!
