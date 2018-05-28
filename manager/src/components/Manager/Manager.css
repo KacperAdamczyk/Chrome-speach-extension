@@ -1,0 +1,43 @@
+:root {
+    --bg-color: whitesmoke;
+    --list-selector-header-height: 50px;
+}
+
+.manager-toolbar {
+    margin: 10px 0;
+}
+
+.manager {
+    height: 95%;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    display: grid;
+    grid-template: 100% / repeat(3, 1fr) 2fr;
+    grid-column-gap: 20px;
+}
+
+
+.manager > * > h3 {
+    text-align: center;
+    margin: 0;
+
+    height: var(--list-selector-header-height);
+    line-height: var(--list-selector-header-height);
+}
+
+.manager__element--enter {
+    opacity: 0;
+}
+.manager__element--enter-active {
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+.manager__element--exit {
+    opacity: 1;
+}
+.manager__element--exit-active {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+

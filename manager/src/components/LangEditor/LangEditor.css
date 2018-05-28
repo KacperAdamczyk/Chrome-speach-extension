@@ -1,0 +1,15 @@
+.lang-editor__action-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 5px;
+}
+
+.lang-editor__action-buttons > button {
+    display: flex;
+    margin-right: 5px;
+}
+
+.lang-editor__action-buttons > button:last-child:not(:only-child) {
+    margin-left: auto;
+    margin-right: 0;
+}

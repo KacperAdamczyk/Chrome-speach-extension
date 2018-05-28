@@ -22,7 +22,7 @@ class StorageManager {
         });
     }
 
-    public async addPresets(): Promise<void> {
+    public async setPresets(): Promise<void> {
         await this.save(preloads);
     }
 

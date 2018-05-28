@@ -1,3 +1,19 @@
 .no-commands {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.no-commands > span {
     text-align: center;
+    font-weight: bold;
+}
+
+.no-commands > a {
+    margin-top: 10px;
+}
+
+.no-commands > a > button {
+    width: 100%;
 }

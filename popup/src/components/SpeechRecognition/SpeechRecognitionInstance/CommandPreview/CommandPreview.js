@@ -25,10 +25,13 @@ class CommandPreviewBase extends Component<Props, State> {
     render() {
         return (
             <div className='command-preview'>
-                <div className="custom-control custom-checkbox">
+                <div className="custom-control custom-checkbox command-preview__toolbar">
                     <input type="checkbox" className="custom-control-input" id="showCommands"
                            value={this.state.showCommands} onChange={this.handleChange}/>
                     <label className="custom-control-label" htmlFor="showCommands">Show available commands</label>
+                    <a href='manager.html' target='_blank' className='command-preview__toolbar__link'>
+                        <button className='btn btn-outline-primary btn-sm'><i className='material-icons'>settings</i></button>
+                    </a>
                 </div>
                 {
                     this.state.showCommands &&

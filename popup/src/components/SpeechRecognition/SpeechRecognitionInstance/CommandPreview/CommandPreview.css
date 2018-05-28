@@ -2,7 +2,23 @@
     margin: 10px 0;
 }
 
+.command-preview__toolbar {
+    display: flex;
+    align-items: center;
+}
+
+.command-preview__toolbar__link {
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.command-preview__toolbar__link button {
+    display: flex;
+}
+
 .command-preview__list {
+    max-height: 200px;
+    overflow: auto;
     list-style-type: none;
     padding: 5px;
 }
