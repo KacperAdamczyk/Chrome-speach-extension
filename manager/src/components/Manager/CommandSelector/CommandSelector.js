@@ -22,7 +22,7 @@ type Props = {
 }
 
 class CommandSelectorBase extends Component<Props> {
-    regexp = /[a-z0-9 ]/g;
+    regexp = /[^!@#$%^&*()-_=+[\]\\;:'",<.>/?]/g;
     commandKeyExtractor = (command: ?Command) => command ? command.voiceCommand : '';
 
     onAdd = (voiceCommand: string) => {

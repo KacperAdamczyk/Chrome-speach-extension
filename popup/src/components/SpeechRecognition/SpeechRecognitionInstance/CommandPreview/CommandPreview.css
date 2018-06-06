@@ -12,6 +12,10 @@
     margin-left: 5px;
 }
 
+.command-preview__toolbar__link:hover {
+    text-decoration: none;
+}
+
 .command-preview__toolbar__link button {
     display: flex;
 }
