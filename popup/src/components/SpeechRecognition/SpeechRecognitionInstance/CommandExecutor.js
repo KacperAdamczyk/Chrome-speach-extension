@@ -12,7 +12,7 @@ type MetaTags = {
 
 const metaTags: MetaTags = {
     '@value': (value: string) => `${value}`,
-    '@numericValue': (value: string) => Number(dictionary[value] || value)
+    '@numericValue': (value: string) => Number(dictionary[value] || value) + ''
 };
 
 class CommandExecutor {
@@ -51,7 +51,7 @@ class CommandExecutor {
 
     expandMetaTags(code: string, value: string): string {
         Object.entries(metaTags).forEach(([key, transform]) => {
-            code = code.replace(new RegExp(key, 'g'), transform(value));
+            code = code.replace(new RegExp(key, 'g'), (transform: any)(value));
         });
         return code;
     }
