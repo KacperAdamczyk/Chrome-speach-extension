@@ -7,6 +7,30 @@ const preloads: ICommandStorage = {
                 codeJS: 'window.alert("@value");',
                 voiceCommand: 'alert *'
             },
+            {
+                codeJS:
+`switch('@value') {
+case 'facebook': window.open('https://www.facebook.com/'); break;
+case 'youtube': window.open('https://www.youtube.com/'); break;
+case 'google': window.open('https://www.google.com/'); break;
+}`,
+                voiceCommand: 'go to *'
+            }
+        ],
+        'pl-PL': [
+            {
+                codeJS: 'window.alert("@value");',
+                voiceCommand: 'alert *'
+            },
+            {
+                codeJS:
+`switch('@value') {
+case 'facebook': window.open('https://www.facebook.com/'); break;
+case 'youtube': window.open('https://www.youtube.com/'); break;
+case 'google': window.open('https://www.google.com/'); break;
+}`,
+                voiceCommand: 'przejdź do *'
+            }
         ]
     },
     'youtube.com*': {
@@ -29,7 +53,7 @@ video.pause();`,
 `const searchInput = document.querySelector("#search input");
 const searchButton = document.querySelector("button.ytd-searchbox");
 searchInput.value = "@value";
-searchButton.click();`,
+setTimeout(() => searchButton.click(), 200);`,
                 voiceCommand: 'search *',
             },
             {
@@ -52,7 +76,7 @@ video.volume = 0;`,
             {
                 codeJS: "document.querySelectorAll('ytd-search img')[@numericValue].click();",
                 voiceCommand: 'select *'
-            },
+            }
         ],
         'pl-PL': [
             {
