@@ -51,9 +51,9 @@ video.pause();`,
             {
                 codeJS:
 `const searchInput = document.querySelector("#search input");
-const searchButton = document.querySelector("button.ytd-searchbox");
+const searchForm = document.querySelector("#search-form");
 searchInput.value = "@value";
-setTimeout(() => searchButton.click(), 200);`,
+searchForm.submit();`,
                 voiceCommand: 'search *',
             },
             {
@@ -94,9 +94,9 @@ video.pause();`,
             {
                 codeJS:
 `const searchInput = document.querySelector("#search input");
-const searchButton = document.querySelector("button.ytd-searchbox");
+const searchForm = document.querySelector("#search-form");
 searchInput.value = "@value";
-searchButton.click();`,
+searchForm.submit();`,
                 voiceCommand: 'szukaj *',
             },
             {
@@ -126,8 +126,7 @@ video.volume = Number.isNaN(volume) ? video.volume : volume / 100;`,
         'en-US': [
             {
                 codeJS:
-`const input = document.querySelector('input#lst-ib');
-input.value = "@value";
+`const input = document.querySelector('input#lst-ib'); input.value = "@value";
 document.querySelector('center input').form.submit();`,
                 voiceCommand: 'search *',
             },
