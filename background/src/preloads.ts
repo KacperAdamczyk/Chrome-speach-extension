@@ -7,6 +7,30 @@ const preloads: ICommandStorage = {
                 codeJS: 'window.alert("@value");',
                 voiceCommand: 'alert *'
             },
+            {
+                codeJS:
+`switch('@value') {
+case 'facebook': window.open('https://www.facebook.com/'); break;
+case 'youtube': window.open('https://www.youtube.com/'); break;
+case 'google': window.open('https://www.google.com/'); break;
+}`,
+                voiceCommand: 'go to *'
+            }
+        ],
+        'pl-PL': [
+            {
+                codeJS: 'window.alert("@value");',
+                voiceCommand: 'alert *'
+            },
+            {
+                codeJS:
+`switch('@value') {
+case 'facebook': window.open('https://www.facebook.com/'); break;
+case 'youtube': window.open('https://www.youtube.com/'); break;
+case 'google': window.open('https://www.google.com/'); break;
+}`,
+                voiceCommand: 'przejdź do *'
+            }
         ]
     },
     'youtube.com*': {
@@ -27,9 +51,9 @@ video.pause();`,
             {
                 codeJS:
 `const searchInput = document.querySelector("#search input");
-const searchButton = document.querySelector("button.ytd-searchbox");
+const searchForm = document.querySelector("#search-form");
 searchInput.value = "@value";
-searchButton.click();`,
+searchForm.submit();`,
                 voiceCommand: 'search *',
             },
             {
@@ -52,7 +76,7 @@ video.volume = 0;`,
             {
                 codeJS: "document.querySelectorAll('ytd-search img')[@numericValue].click();",
                 voiceCommand: 'select *'
-            },
+            }
         ],
         'pl-PL': [
             {
@@ -70,9 +94,9 @@ video.pause();`,
             {
                 codeJS:
 `const searchInput = document.querySelector("#search input");
-const searchButton = document.querySelector("button.ytd-searchbox");
+const searchForm = document.querySelector("#search-form");
 searchInput.value = "@value";
-searchButton.click();`,
+searchForm.submit();`,
                 voiceCommand: 'szukaj *',
             },
             {
@@ -102,8 +126,7 @@ video.volume = Number.isNaN(volume) ? video.volume : volume / 100;`,
         'en-US': [
             {
                 codeJS:
-`const input = document.querySelector('input#lst-ib');
-input.value = "@value";
+`const input = document.querySelector('input#lst-ib'); input.value = "@value";
 document.querySelector('center input').form.submit();`,
                 voiceCommand: 'search *',
             },
